@@ -40,8 +40,6 @@
     [self.activityIndicator startAnimating];
     [self beginRefresh];
 
-    
-    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
 
     self.refreshControl = [[UIRefreshControl alloc] init];
     //addtarget used to actually update
@@ -78,6 +76,8 @@
 // Updates the tableView with the new data
 // Hides the RefreshControl
 - (void)beginRefresh {
+    
+    [self.activityIndicator stopAnimating];
 
     
     NSURL *url = [NSURL URLWithString:@"https://api.themoviedb.org/3/movie/now_playing?api_key=970b50d94a74e5c0b1b27b01913c2d57"];
@@ -100,8 +100,6 @@
                [self presentViewController:alert animated: YES completion: nil];
                
                [self.refreshControl endRefreshing];
-               [self.activityIndicator stopAnimating];
-
            }
            else {
                NSDictionary *dataDictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
@@ -118,7 +116,6 @@
                // TODO: Reload your table view data
                [self.tableView reloadData];
                
-               [self.activityIndicator stopAnimating];
            }
         [self.refreshControl endRefreshing];
 

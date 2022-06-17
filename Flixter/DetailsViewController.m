@@ -19,6 +19,7 @@
     //set the detailed synopsis text
     self.synopsisLabel.text = self.passedObj[@"overview"];
     
+    self.titleLabel.text = self.passedObj[@"title"];
     //set the poster image
     //grab poster image
     NSString *urlString = self.passedObj[@"poster_path"];

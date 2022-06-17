@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIImageView *detailPoster;
 @property (weak, nonatomic) IBOutlet UIImageView *detailBackdrop;
 @property (weak, nonatomic) IBOutlet UILabel *synopsisLabel;
+@property (weak, nonatomic) IBOutlet UILabel *titleLabel;
 @property (nonatomic, strong) NSDictionary *passedObj;
 @end
 
